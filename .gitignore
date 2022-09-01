@@ -1,0 +1,11 @@
+Library/*
+obj/*
+*.csproj
+*.sln
+.idea/*
+.vs/*
+.vscode/*
+Temp/*
+ProjectSettings/ProjectVersion.txt
+/Assets/AmplifyShaderEditor.meta
+/Assets/AmplifyShaderEditor

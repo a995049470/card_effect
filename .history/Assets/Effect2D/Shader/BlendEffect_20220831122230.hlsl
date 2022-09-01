@@ -1,0 +1,6 @@
+#ifndef INCLUDE_BLEND_EFFECT_HLSL
+#define INCLUDE_BLEND_EFFECT_HLSL
+
+
+
+#endif

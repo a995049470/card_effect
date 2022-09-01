@@ -37,9 +37,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlendTex4:
-        m_Texture: {fileID: 2800000, guid: 37e6f91f3efb0954cbdce254638862ea, type: 3}
-        m_Scale: {x: 0.8, y: 0.8}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 12cb03bca7c1cc14095834a3c77ca9b4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.31, y: 0}
     - _DisturbTex:
         m_Texture: {fileID: 2800000, guid: 957575b0d9b9f054685ab5aa592be1ab, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -66,12 +66,12 @@ Material:
     - _FlashMin1: 1
     - _FlashMin2: 1
     - _FlashMin3: 1
-    - _FlashMin4: 0.2
+    - _FlashMin4: 0
     - _FlashSpd0: 0
     - _FlashSpd1: 0
     - _FlashSpd2: 0
     - _FlashSpd3: 0
-    - _FlashSpd4: 3.18
+    - _FlashSpd4: 3
     - _Group0: 1
     - _Group1: 1
     - _Group2: 1
@@ -103,7 +103,7 @@ Material:
     - _BlendColor1: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
     - _BlendColor2: {r: 2.6596792, g: 2.1031568, b: 1.4427506, a: 1}
     - _BlendColor3: {r: 2.6701572, g: 2.6282175, b: 1.1323704, a: 1}
-    - _BlendColor4: {r: 7.464267, g: 7.464267, b: 7.464267, a: 1}
+    - _BlendColor4: {r: 9.965381, g: 9.965381, b: 9.965381, a: 1}
     - _DisturbDir: {r: 1, g: 0, b: 0, a: 0}
     - _MoveDir0: {r: -1, g: -0.33, b: 0, a: 0}
     - _MoveDir1: {r: -1, g: -0.5, b: 0, a: 0}

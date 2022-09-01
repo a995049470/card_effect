@@ -51,7 +51,7 @@ float Flash(float spd, float a, float b)
         float mask = maskColor[0] * (maskUse / 1 % 2 ) + \
                      maskColor[1] * (maskUse / 2 % 2 ) + \
                      maskColor[2] * (maskUse / 4 % 2 ) + \
-                     maskColor[3] * (maskUse / 8 % 2 ) + \
+                     maskColor[3] * maskColor[3] * (maskUse / 8 % 2 ) + \
                      (maskUse / 16 % 2); \
         float4 blendColor = _BlendTex##id.Sample(sampler_BlendTex##id, uv) * _BlendColor##id * mask * flash; \
         /*需要更多的混合方式*/\

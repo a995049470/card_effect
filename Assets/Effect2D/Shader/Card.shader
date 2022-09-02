@@ -5,7 +5,7 @@
     {
 
         [Title(Card)]
-        [Main(Common, _, Off, Off)]_Common("公用", float) = 0
+        [Main(Common, _SHOW_MAIN_TEX, On)]_Common("公用", float) = 1
         [Sub(Common)]_MainTex("主贴图", 2d) = "black" {}
         [Sub(Common)]_MaskTex("遮罩", 2d) = "white" {}
 
@@ -14,9 +14,10 @@
         [Sub(Group0)] _MoveDir0("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group0)] _MoveSpd0("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
-        [Sub(Group0)] _MaskUse0("遮罩类型", int) = 0
+        [Sub(Group0)] _MaskUse0("遮罩类型", int) = 16
         [Sub(Group0)] [HDR] _BlendColor0("颜色", color) = (1, 1, 1, 1)
         [SubToggle(Group0)] _Polar0("极坐标", float) = 0
+        [Sub(Group0)] _RotateAngle0("角度", Range(0, 1)) = 0
         [Sub(Group0)] _RotateSpd0("旋转速度", float) = 0
         [Sub(Group0)] _RotateCenter0("旋转中心", vector) = (0.5, 0.5, 0, 0)
         [Sub(Group0)] _FlashSpd0("闪烁速度", float) = 0
@@ -28,9 +29,10 @@
         [Sub(Group1)] _MoveDir1("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group1)] _MoveSpd1("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
-        [Sub(Group1)] _MaskUse1("遮罩类型", int) = 0
+        [Sub(Group1)] _MaskUse1("遮罩类型", int) = 16
         [Sub(Group1)] [HDR] _BlendColor1("颜色", color) = (1, 1, 1, 1)
         [SubToggle(Group1)] _Polar1("极坐标", float) = 0
+        [Sub(Group1)] _RotateAngle1("角度", Range(0, 1)) = 0
         [Sub(Group1)] _RotateSpd1("旋转速度", float) = 0
         [Sub(Group1)] _RotateCenter1("旋转中心", vector) = (0.5, 0.5, 0, 0)
         [Sub(Group1)] _FlashSpd1("闪烁速度", float) = 0
@@ -42,9 +44,10 @@
         [Sub(Group2)] _MoveDir2("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group2)] _MoveSpd2("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
-        [Sub(Group2)] _MaskUse2("遮罩类型", int) = 0
+        [Sub(Group2)] _MaskUse2("遮罩类型", int) = 16
         [Sub(Group2)] [HDR] _BlendColor2("颜色", color) = (1, 1, 1, 1)
         [SubToggle(Group2)] _Polar2("极坐标", float) = 0
+        [Sub(Group2)] _RotateAngle2("角度", Range(0, 1)) = 0
         [Sub(Group2)] _RotateSpd2("旋转速度", float) = 0
         [Sub(Group2)] _RotateCenter2("旋转中心", vector) = (0.5, 0.5, 0, 0)
         [Sub(Group2)] _FlashSpd2("闪烁速度", float) = 0
@@ -56,9 +59,10 @@
         [Sub(Group3)] _MoveDir3("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group3)] _MoveSpd3("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
-        [Sub(Group3)] _MaskUse3("遮罩类型", int) = 0
+        [Sub(Group3)] _MaskUse3("遮罩类型", int) = 16
         [Sub(Group3)] [HDR] _BlendColor3("颜色", color) = (1, 1, 1, 1)
         [SubToggle(Group3)] _Polar3("极坐标", float) = 0
+        [Sub(Group3)] _RotateAngle3("角度", Range(0, 1)) = 0
         [Sub(Group3)] _RotateSpd3("旋转速度", float) = 0
         [Sub(Group3)] _RotateCenter3("旋转中心", vector) = (0.5, 0.5, 0, 0)
         [Sub(Group3)] _FlashSpd3("闪烁速度", float) = 0
@@ -70,9 +74,10 @@
         [Sub(Group4)] _MoveDir4("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group4)] _MoveSpd4("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
-        [Sub(Group4)] _MaskUse4("遮罩类型", int) = 0
+        [Sub(Group4)] _MaskUse4("遮罩类型", int) = 16
         [Sub(Group4)] [HDR] _BlendColor4("颜色", color) = (1, 1, 1, 1)
         [SubToggle(Group4)] _Polar4("极坐标", float) = 0
+        [Sub(Group4)] _RotateAngle4("角度", Range(0, 1)) = 0
         [Sub(Group4)] _RotateSpd4("旋转速度", float) = 0
         [Sub(Group4)] _RotateCenter4("旋转中心", vector) = (0.5, 0.5, 0, 0)
         [Sub(Group4)] _FlashSpd4("闪烁速度", float) = 0
@@ -113,6 +118,7 @@
             #pragma shader_feature _BLEND_EFFECT3
             #pragma shader_feature _BLEND_EFFECT4
             #pragma shader_feature _BLEND_DISTURB
+            #pragma shader_feature _SHOW_MAIN_TEX
 
 
 
@@ -168,10 +174,13 @@
                 float2 uv = i.uv;
                 float4 mask = _MaskTex.Sample(sampler_MaskTex, uv);
                 float2 uv_main = uv;
+                float4 col = 0;
+        #if _SHOW_MAIN_TEX
             #if _BLEND_DISTURB
                 uv_main = Disturb(uv, mask);
             #endif
-                float4 col = _MainTex.Sample(sampler_MainTex, uv_main);
+            col = _MainTex.Sample(sampler_MainTex, uv_main);
+        #endif
             #if _BLEND_EFFECT0
                 ApplyBlendEffect0(uv, mask, col);
             #endif

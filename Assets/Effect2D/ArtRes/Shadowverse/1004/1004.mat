@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 1004
   m_Shader: {fileID: 4800000, guid: 4999c3e7f05d69546846fefc1c85cfef, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _BLEND_DISTURB _BLEND_EFFECT0 _BLEND_EFFECT1 _BLEND_EFFECT2 _BLEND_EFFECT3
+    _BLEND_EFFECT4 _SHOW_MAIN_TEX
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,42 +21,42 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BlendTex0:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: d0c2437039a88de4fa217d4360600500, type: 3}
+        m_Scale: {x: 1.24, y: -0.13}
+        m_Offset: {x: 0.69, y: 1}
     - _BlendTex1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: d1c45a2d11d44394e98de5b1842c5788, type: 3}
+        m_Scale: {x: 2, y: 0.81}
         m_Offset: {x: 0, y: 0}
     - _BlendTex2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: a8f2fbd2109fea2449d02b8c48591a68, type: 3}
+        m_Scale: {x: 1.55, y: 0.98}
         m_Offset: {x: 0, y: 0}
     - _BlendTex3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a2b979ebacb9d1f4db398362b3969ffa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BlendTex4:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8914da589e03adc4d961c9439cb50f95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DisturbTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0b63dee32665e50428acac1027da58a3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: beda2364acc2aca49bec581e56493d24, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7a3cad2eb622b604f8d4eacd2606f59f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Common: 0
-    - _Disturb: 0
-    - _DisturbSpd: 0
-    - _DisturbStr: 0
+    - _Common: 1
+    - _Disturb: 1
+    - _DisturbSpd: 0.3
+    - _DisturbStr: 11.28
     - _FlashMax0: 1
     - _FlashMax1: 1
     - _FlashMax2: 1
@@ -71,44 +72,49 @@ Material:
     - _FlashSpd2: 0
     - _FlashSpd3: 0
     - _FlashSpd4: 0
-    - _Group0: 0
-    - _Group1: 0
-    - _Group2: 0
-    - _Group3: 0
-    - _Group4: 0
-    - _MaskUse: 0
-    - _MaskUse0: 0
-    - _MaskUse1: 0
-    - _MaskUse2: 0
-    - _MaskUse3: 0
-    - _MaskUse4: 0
-    - _MoveSpd0: 0
-    - _MoveSpd1: 0
-    - _MoveSpd2: 0
-    - _MoveSpd3: 0
-    - _MoveSpd4: 0
+    - _Group0: 1
+    - _Group1: 1
+    - _Group2: 1
+    - _Group3: 1
+    - _Group4: 1
+    - _MaskUse: 4
+    - _MaskUse0: 8
+    - _MaskUse1: 1
+    - _MaskUse2: 1
+    - _MaskUse3: 2
+    - _MaskUse4: 2
+    - _MoveSpd0: 2.44
+    - _MoveSpd1: 0.77
+    - _MoveSpd2: 0.66
+    - _MoveSpd3: 0.76
+    - _MoveSpd4: 0.36
     - _Polar0: 0
     - _Polar1: 0
     - _Polar2: 0
     - _Polar3: 0
     - _Polar4: 0
+    - _RotateAngle0: 0.145
+    - _RotateAngle1: 0.358
+    - _RotateAngle2: 0.373
+    - _RotateAngle3: 0.598
+    - _RotateAngle4: 0.384
     - _RotateSpd0: 0
     - _RotateSpd1: 0
     - _RotateSpd2: 0
     - _RotateSpd3: 0
     - _RotateSpd4: 0
     m_Colors:
-    - _BlendColor0: {r: 1, g: 1, b: 1, a: 1}
-    - _BlendColor1: {r: 1, g: 1, b: 1, a: 1}
-    - _BlendColor2: {r: 1, g: 1, b: 1, a: 1}
-    - _BlendColor3: {r: 1, g: 1, b: 1, a: 1}
-    - _BlendColor4: {r: 1, g: 1, b: 1, a: 1}
+    - _BlendColor0: {r: 1.6415094, g: 0, b: 0.46790507, a: 1}
+    - _BlendColor1: {r: 0.5943396, g: 0.036445368, b: 0.19995932, a: 1}
+    - _BlendColor2: {r: 0.6415094, g: 0, b: 0.07003906, a: 1}
+    - _BlendColor3: {r: 0.084905684, g: 0.084905684, b: 0.084905684, a: 1}
+    - _BlendColor4: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
     - _DisturbDir: {r: 1, g: 0, b: 0, a: 0}
-    - _MoveDir0: {r: 1, g: 0, b: 0, a: 0}
-    - _MoveDir1: {r: 1, g: 0, b: 0, a: 0}
-    - _MoveDir2: {r: 1, g: 0, b: 0, a: 0}
+    - _MoveDir0: {r: 0, g: 1, b: 0, a: 0}
+    - _MoveDir1: {r: 0, g: 1, b: 0, a: 0}
+    - _MoveDir2: {r: 0, g: 1, b: 0, a: 0}
     - _MoveDir3: {r: 1, g: 0, b: 0, a: 0}
-    - _MoveDir4: {r: 1, g: 0, b: 0, a: 0}
+    - _MoveDir4: {r: 0, g: 1, b: 0, a: 0}
     - _RotateCenter0: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _RotateCenter1: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _RotateCenter2: {r: 0.5, g: 0.5, b: 0, a: 0}

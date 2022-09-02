@@ -3,10 +3,10 @@
 
 #include "Assets\Effect2D\Shader\Common.hlsl"
 
-float2 Rotate(float2 uv, float2 rotSpd, float2 rotCenter, float polar)
+float2 Rotate(float2 uv, float angle, float2 rotSpd, float2 rotCenter, float polar)
 {
     float2 uv_poloar = ConvertRectToPolar(uv, rotCenter);
-    uv_poloar.y += _Time.y * rotSpd;
+    uv_poloar.y += _Time.y * rotSpd + angle;
     float2 uv_rect = ConvertPolarToRect(uv_poloar, rotCenter);
     return lerp(uv_rect, uv_poloar, polar);
 }
@@ -29,6 +29,7 @@ float Flash(float spd, float a, float b)
     float4 _BlendColor##id; \
     float _Polar##id; \
     float _RotateSpd##id; \
+    float _RotateAngle##id;\
     float2 _RotateCenter##id; \
     float _FlashSpd##id; \
     float _FlashMin##id; \
@@ -37,14 +38,15 @@ float Flash(float spd, float a, float b)
     void ApplyBlendEffect##id##(float2 uv, float4 maskColor, inout float4 color) \
     { \
         float4 st = _BlendTex##id##_ST; \
-        uv = uv * st.xy + st.zw; \
+        float2 rotCenter = _RotateCenter##id; \
+        float rotSpd = _RotateSpd##id * 0.01; \
+        float isPolar = _Polar##id; \
+        float rotateAngle = _RotateAngle##id;\
+        uv = Rotate(uv, rotateAngle, rotSpd, rotCenter, isPolar);\
         float2 dir = normalize(_MoveDir##id); \
         float spd = _MoveSpd##id; \
         uv += _Time.y * spd * dir; \
-        float2 rotCenter = _RotateCenter##id * st.xy + st.zw; \
-        float rotSpd = _RotateSpd##id * 0.01; \
-        float isPolar = _Polar##id; \
-        uv = Rotate(uv, rotSpd, rotCenter, isPolar);\
+        uv = uv * st.xy + st.zw; \
         float flash = Flash(_FlashSpd##id, _FlashMin##id, _FlashMax##id);\
         \
         int maskUse = _MaskUse##id; \
@@ -54,6 +56,7 @@ float Flash(float spd, float a, float b)
                      maskColor[3] * maskColor[3] * (maskUse / 8 % 2 ) + \
                      (maskUse / 16 % 2); \
         float4 blendColor = _BlendTex##id.Sample(sampler_BlendTex##id, uv) * _BlendColor##id * mask * flash; \
+        blendColor.a = _BlendColor##id.a;\
         /*需要更多的混合方式*/\
         color += blendColor;\
     } \

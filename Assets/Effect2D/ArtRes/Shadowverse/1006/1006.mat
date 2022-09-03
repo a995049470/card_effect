@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 1006
+  m_Shader: {fileID: 4800000, guid: 4999c3e7f05d69546846fefc1c85cfef, type: 3}
+  m_ShaderKeywords: _BLEND_DISTURB _BLEND_EFFECT0 _BLEND_EFFECT1 _BLEND_EFFECT2 _SHOW_MAIN_TEX
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex0:
+        m_Texture: {fileID: 2800000, guid: a993509b551775e4fb665cb4ae2f6dd9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex2:
+        m_Texture: {fileID: 2800000, guid: 64e080a4bdda84a4da32fc17d9d7e90e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex0:
+        m_Texture: {fileID: 2800000, guid: fab427fb67616884f885d92b4954ec28, type: 3}
+        m_Scale: {x: 1, y: 0.49}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex1:
+        m_Texture: {fileID: 2800000, guid: fab427fb67616884f885d92b4954ec28, type: 3}
+        m_Scale: {x: 1, y: 0.54}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex2:
+        m_Texture: {fileID: 2800000, guid: 044ffc0dc5c7ef747b6d936f0b3d1352, type: 3}
+        m_Scale: {x: 0.5, y: 0.5}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlendTex4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DisturbTex:
+        m_Texture: {fileID: 2800000, guid: 2c3dbc8928663044caeefa7bebb0e65d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 7b6098487151cc841ae94ce2575ae3cf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 2800000, guid: 1401b82e1a7dc4a4abb5ef756c21016b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Common: 1
+    - _Disturb: 1
+    - _DisturbSpd: 0.328
+    - _DisturbStr: 27.4
+    - _EmitSpd2: 0
+    - _FlashMax0: 1
+    - _FlashMax1: 1
+    - _FlashMax2: 1
+    - _FlashMax3: 1
+    - _FlashMax4: 1
+    - _FlashMin0: 1
+    - _FlashMin1: 1
+    - _FlashMin2: 1
+    - _FlashMin3: 1
+    - _FlashMin4: 1
+    - _FlashSpd0: 0
+    - _FlashSpd1: 0
+    - _FlashSpd2: 0
+    - _FlashSpd3: 0
+    - _FlashSpd4: 0
+    - _Group0: 1
+    - _Group1: 1
+    - _Group2: 1
+    - _Group3: 0
+    - _Group4: 0
+    - _MaskUse: 4
+    - _MaskUse0: 2
+    - _MaskUse1: 2
+    - _MaskUse2: 1
+    - _MaskUse3: 16
+    - _MaskUse4: 16
+    - _MoveSpd0: 0.09
+    - _MoveSpd1: -0.04
+    - _MoveSpd2: 0.12
+    - _MoveSpd3: 0
+    - _MoveSpd4: 0
+    - _Polar0: 0
+    - _Polar1: 0
+    - _Polar2: 0
+    - _Polar3: 0
+    - _Polar4: 0
+    - _RotateAngle0: 0.21
+    - _RotateAngle1: 0.205
+    - _RotateAngle2: 0.592
+    - _RotateAngle3: 0
+    - _RotateAngle4: 0
+    - _RotateSpd0: 0
+    - _RotateSpd1: 0
+    - _RotateSpd2: 0
+    - _RotateSpd3: 0
+    - _RotateSpd4: 0
+    m_Colors:
+    - _BlendColor0: {r: 3.929665, g: 3.024402, b: 1.9133971, a: 1}
+    - _BlendColor1: {r: 3.9800453, g: 3.188204, b: 2.3130107, a: 1}
+    - _BlendColor2: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    - _BlendColor3: {r: 1, g: 1, b: 1, a: 1}
+    - _BlendColor4: {r: 1, g: 1, b: 1, a: 1}
+    - _DisturbDir: {r: 1, g: 0, b: 0, a: 0}
+    - _MoveDir0: {r: 0, g: 1, b: 0, a: 0}
+    - _MoveDir1: {r: 0, g: 1, b: 0, a: 0}
+    - _MoveDir2: {r: 1, g: 0, b: 0, a: 0}
+    - _MoveDir3: {r: 1, g: 0, b: 0, a: 0}
+    - _MoveDir4: {r: 1, g: 0, b: 0, a: 0}
+    - _RotateCenter0: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _RotateCenter1: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _RotateCenter2: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _RotateCenter3: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _RotateCenter4: {r: 0.5, g: 0.5, b: 0, a: 0}

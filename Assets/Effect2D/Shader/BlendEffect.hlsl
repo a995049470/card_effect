@@ -6,6 +6,7 @@
 float2 Rotate(float2 uv, float angle, float2 rotSpd, float2 rotCenter, float polar)
 {
     float2 uv_poloar = ConvertRectToPolar(uv, rotCenter);
+
     uv_poloar.y += _Time.y * rotSpd + angle;
     float2 uv_rect = ConvertPolarToRect(uv_poloar, rotCenter);
     return lerp(uv_rect, uv_poloar, polar);
@@ -22,6 +23,8 @@ float Flash(float spd, float a, float b)
 #define BELND_EFFECT(id) \
     Texture2D _BlendTex##id; \
     SamplerState sampler_BlendTex##id; \
+    Texture2D _AlphaTex##id;\
+    SamplerState sampler_AlphaTex##id; \
     float4 _BlendTex##id##_ST; \
     float2 _MoveDir##id; \
     float _MoveSpd##id; \
@@ -56,7 +59,9 @@ float Flash(float spd, float a, float b)
                      maskColor[3] * maskColor[3] * (maskUse / 8 % 2 ) + \
                      (maskUse / 16 % 2); \
         float4 blendColor = _BlendTex##id.Sample(sampler_BlendTex##id, uv) * _BlendColor##id * mask * flash; \
-        blendColor.a = _BlendColor##id.a;\
+        float alpha = _AlphaTex##id.Sample(sampler_AlphaTex##id, uv).a;\
+        blendColor.a = 1;\
+        blendColor.rgb *= alpha;\
         /*需要更多的混合方式*/\
         color += blendColor;\
     } \

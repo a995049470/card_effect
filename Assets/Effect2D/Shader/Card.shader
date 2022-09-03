@@ -11,6 +11,7 @@
 
         [Main(Group0, _BLEND_EFFECT0)]_Group0 ("合成效果 0", float) = 0
         [Sub(Group0)] _BlendTex0("合成图", 2d) = "white" {}
+        [Sub(Group0)] _AlphaTex0("透明图", 2d) = "white" {}
         [Sub(Group0)] _MoveDir0("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group0)] _MoveSpd0("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
@@ -26,6 +27,7 @@
 
         [Main(Group1, _BLEND_EFFECT1)]_Group1 ("合成效果 1", float) = 0
         [Sub(Group1)] _BlendTex1("合成图", 2d) = "white" {}
+        [Sub(Group1)] _AlphaTex1("透明图", 2d) = "white" {}
         [Sub(Group1)] _MoveDir1("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group1)] _MoveSpd1("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
@@ -41,6 +43,7 @@
 
         [Main(Group2, _BLEND_EFFECT2)]_Group2 ("合成效果 2", float) = 0
         [Sub(Group2)] _BlendTex2("合成图", 2d) = "white" {}
+        [Sub(Group2)] _AlphaTex2("透明图", 2d) = "white" {}
         [Sub(Group2)] _MoveDir2("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group2)] _MoveSpd2("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
@@ -48,6 +51,7 @@
         [Sub(Group2)] [HDR] _BlendColor2("颜色", color) = (1, 1, 1, 1)
         [SubToggle(Group2)] _Polar2("极坐标", float) = 0
         [Sub(Group2)] _RotateAngle2("角度", Range(0, 1)) = 0
+        [Sub(Group2)] _EmitSpd2("放射速度", float) = 0
         [Sub(Group2)] _RotateSpd2("旋转速度", float) = 0
         [Sub(Group2)] _RotateCenter2("旋转中心", vector) = (0.5, 0.5, 0, 0)
         [Sub(Group2)] _FlashSpd2("闪烁速度", float) = 0
@@ -56,6 +60,7 @@
 
         [Main(Group3, _BLEND_EFFECT3)]_Group3 ("合成效果 3", float) = 0
         [Sub(Group3)] _BlendTex3("合成图", 2d) = "white" {}
+        [Sub(Group3)] _AlphaTex3("透明图", 2d) = "white" {}
         [Sub(Group3)] _MoveDir3("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group3)] _MoveSpd3("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
@@ -71,6 +76,7 @@
 
         [Main(Group4, _BLEND_EFFECT4)]_Group4 ("合成效果 4", float) = 0
         [Sub(Group4)] _BlendTex4("合成图", 2d) = "white" {}
+        [Sub(Group4)] _AlphaTex4("透明图", 2d) = "white" {}
         [Sub(Group4)] _MoveDir4("平移方向", vector) = (1, 0, 0, 0)
         [Sub(Group4)] _MoveSpd4("平移速度", float) = 0
         [Enum(R, 1, G, 2, B, 4, A, 8, None, 16)]
@@ -89,7 +95,7 @@
         [Sub(Disturb)] _DisturbTex("扰动图", 2d) = "white" {}
         [Sub(Disturb)] _DisturbDir("扰动方向", vector) = (1, 0, 0, 0)
         [Sub(Disturb)] _DisturbStr("扰动强度", float) = 0
-        [Sub(Disturb)] _DisturbSpd("扰动速度", float) = 0
+        [Sub(Disturb)] _DisturbSpd("扰动速度", range(0, 1)) = 0
 
 
     }

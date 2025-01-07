@@ -8,6 +8,7 @@
         [Main(Common, _SHOW_MAIN_TEX, On)]_Common("公用", float) = 1
         [Sub(Common)]_MainTex("主贴图", 2d) = "black" {}
         [Sub(Common)]_MaskTex("遮罩", 2d) = "white" {}
+        [Sub(Common)]_Strength("强度", Range(0, 1)) = 1
 
         [Main(Group0, _BLEND_EFFECT0)]_Group0 ("合成效果 0", float) = 0
         [Sub(Group0)] _BlendTex0("合成图", 2d) = "white" {}
@@ -148,6 +149,7 @@
             SamplerState sampler_MainTex;
             Texture2D _MaskTex;
             SamplerState sampler_MaskTex;
+            float _Strength;
 
             #include "Assets\Effect2D\Shader\BlendEffect.hlsl"
 			
@@ -185,7 +187,7 @@
             #if _BLEND_DISTURB
                 uv_main = Disturb(uv, mask);
             #endif
-            col = _MainTex.Sample(sampler_MainTex, uv_main);
+            col = _MainTex.Sample(sampler_MainTex, uv_main) * _Strength;
         #endif
             #if _BLEND_EFFECT0
                 ApplyBlendEffect0(uv, mask, col);

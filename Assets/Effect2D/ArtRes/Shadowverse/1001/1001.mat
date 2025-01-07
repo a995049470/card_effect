@@ -20,6 +20,26 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaTex0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _AlphaTex4:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BlendTex0:
         m_Texture: {fileID: 2800000, guid: ab95bd6a8f75a634fb9376a5b685dfa3, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -98,6 +118,7 @@ Material:
     - _Disturb: 1
     - _DisturbSpd: 0.2
     - _DisturbStr: 17.1
+    - _EmitSpd2: 0
     - _FlashMax: 1
     - _FlashMax0: 1
     - _FlashMax1: 1
